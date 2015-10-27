@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ListView的头部 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <!-- 内容 -->
+
+    <RelativeLayout
+        android:id="@+id/head_contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/refresh_listview_head_contentLayout_paddingBottom"
+        android:paddingTop="@dimen/refresh_listview_head_contentLayout_paddingTop" >
+
+        <!-- 进度条 -->
+
+        <!-- 提示、载入更多 -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <!-- 提示 -->
+
+            <ProgressBar
+                android:id="@+id/head_progressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/progressbar_bg"
+                android:indeterminate="true" >
+            </ProgressBar>
+
+            <!-- 载入更多 -->
+
+            <TextView
+                android:id="@+id/head_lastUpdatedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/refresh_listview_head_lastUpadtedTextView_layout_marginTop"
+                android:text="@string/refreshListView_head_load_more"
+                android:textColor="@color/gold"
+                android:textSize="@dimen/refresh_listview_head_lastUpdatedTextView_textSize" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

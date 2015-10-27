@@ -1,0 +1,222 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/biz_plugin_weather_shenzhen_bg"
+    tools:context=".MainActivity" >
+    
+    <RelativeLayout android:id="@+id/l_title"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:background="@drawable/background"
+        >
+       <ImageView 
+           android:id="@+id/t_city"
+           android:src="@drawable/title_city"
+           android:layout_width="45dip"
+           android:layout_height="45dip"
+           android:layout_alignParentLeft="true"
+           android:contentDescription="@drawable/title_city"      
+           /> 
+           
+      <ImageView 
+          android:id="@+id/t_update"
+          android:src="@drawable/title_update"
+          android:layout_alignParentRight="true"
+          android:layout_width="45dp"
+          android:layout_height="45dp"
+          />
+      
+       <ImageView 
+          android:id="@+id/t_share"
+          android:src="@drawable/title_share"
+          android:layout_toLeftOf="@id/t_update"
+          android:layout_width="45dp"
+          android:layout_height="45dp"
+          />
+       
+        <ImageView 
+          android:id="@+id/t_base"
+          android:src="@drawable/base_action_bar_action_city"
+          android:layout_toLeftOf="@id/t_share"
+          android:layout_width="45dp"
+          android:layout_height="45dp"
+          />
+           
+       <TextView 
+           android:id="@+id/title_cityname"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_toRightOf="@id/t_city"
+           android:textColor="#ffffffff"
+           android:textSize="22sp"
+           android:layout_marginTop="10dp"
+           android:text="@string/weather_title"
+       		android:gravity="center_vertical"
+           />      
+        
+    </RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/l_info"
+        android:layout_below="@id/l_title"
+        android:layout_width="fill_parent"
+        android:layout_height="85.0dip"
+        >
+       
+        <TextView 
+            android:id="@+id/t_info_address"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true"
+           android:textColor="#ffffffff"
+           android:textSize="28sp"
+           android:text="@string/weather_info_address"
+       	 	android:gravity="center_vertical"
+           /> 
+         
+        <TextView 
+            android:id="@+id/t_info_time"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/t_info_address"
+           android:textColor="#ffffffff"
+           android:textSize="12sp"
+           android:text="@string/weather_info_time"
+       	 	android:gravity="center_vertical"
+           /> 
+        
+         <TextView 
+            android:id="@+id/t_info_shidu"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/t_info_time"
+           android:textColor="#ffffffff"
+           android:textSize="12sp"
+           android:text="@string/weather_info_shidu"
+       	 	android:gravity="center_vertical"
+           /> 
+           
+         <ImageView 
+          android:id="@+id/t_touxiang"
+          android:src="@drawable/biz_plugin_weather_0_50"
+          android:layout_alignParentRight="true"
+          android:layout_width="65dp"
+          android:layout_height="65dp"
+          />
+         
+         <TextView 
+            android:id="@+id/t_info_pm"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_toLeftOf="@id/t_touxiang"
+           android:textColor="#ffffffff"
+           android:textSize="12sp"
+           android:text="@string/weather_pm"
+       	 	android:gravity="center_vertical"
+           /> 
+         
+         <TextView 
+            android:id="@+id/t_info_100"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/t_info_pm"
+           android:layout_toLeftOf="@id/t_touxiang"
+           android:textColor="#ffffffff"
+           android:textSize="24sp"
+           android:text="@string/weather_100"
+       	 	android:gravity="center_vertical"
+           /> 
+           
+         <TextView 
+            android:id="@+id/t_info_wuran"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/t_info_100"
+           android:layout_toLeftOf="@id/t_touxiang"
+           android:textColor="#ffffffff"
+           android:textSize="16sp"
+           android:text="@string/weather_wuran"
+       	 	android:gravity="center_vertical"
+           /> 
+        
+    </RelativeLayout>
+    
+   	<RelativeLayout android:id="@+id/l_weather"
+        android:layout_below="@id/l_info"
+        android:layout_width="fill_parent"
+        android:layout_height="100.0dip"
+        >
+       <ImageView 
+          android:id="@+id/t_sun"
+          android:src="@drawable/biz_plugin_weather_qing"
+          android:layout_alignParentLeft="true"
+          android:layout_width="65dp"
+          android:layout_height="65dp"
+          />   
+         <TextView 
+            android:id="@+id/t_info_jintian"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_toRightOf="@id/t_sun"
+           android:textColor="#ffffffff"
+           android:textSize="16sp"
+           android:text="今天 星期三"
+       	 	android:gravity="center_vertical"
+           />
+          <TextView 
+            android:id="@+id/t_info_wendu"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/t_info_jintian"
+           android:layout_toRightOf="@id/t_sun"
+            android:text="-2℃ ~7℃"
+           android:textColor="#ffffffff"
+           android:textSize="26sp"
+       	 	android:gravity="center_vertical"
+           />
+          
+          <TextView 
+            android:id="@+id/t_info_duoyun"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/t_info_wendu"
+           android:layout_toRightOf="@id/t_sun"
+            android:text="多云转晴"
+           android:textColor="#ffffffff"
+           android:textSize="16sp"
+       	 	android:gravity="center_vertical"
+           />
+          
+           <TextView 
+            android:id="@+id/t_info_weifen"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/t_info_duoyun"
+           android:layout_toRightOf="@id/t_sun"
+            android:text="微风"
+           android:textColor="#ffffffff"
+           android:textSize="16sp"
+       	 	android:gravity="center_vertical"
+           />
+           
+   	</RelativeLayout>
+	<RelativeLayout android:id="@+id/r_viewpager"
+        android:layout_below="@id/l_weather"
+        android:layout_width="fill_parent"
+        android:layout_height="165.0dip"
+        >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="165.0dip"
+            android:layout_marginTop="5dip"
+            android:overScrollMode="never"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            />
+    </RelativeLayout>
+</RelativeLayout>

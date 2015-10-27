@@ -1,0 +1,60 @@
+package ah.hathi.snowdrop;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.View.OnClickListener;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.json.JSONObject;
+
+
+public class FragmentPage1 extends Fragment { 
+	
+	static String MY_API_KEY = "68c4cf128f66f45e2a64125dd96b6e38";
+	static File file = new File(".//data.json");
+	
+	@Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,  
+            Bundle savedInstanceState) {  
+        
+		String httpUrl = "http://apis.baidu.com/heweather/weather/free";
+		String httpArg = "city=朝阳";
+		String jsonResult = request(httpUrl, httpArg);
+		
+		System.out.println(jsonResult);
+
+		JSONObject data = JSONObject.fromObject(jsonResult);
+		JSONObject HeWeather = (JSONObject)data.getJSONArray("HeWeather data service 3.0").get(0);	
+		JSONObject nowData= (JSONObject)HeWeather.get("now");
+		String tmp = (String)nowData.get("tmp");
+		System.out.println(tmp);
+		
+		
+		BufferedWriter fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file,true),"UTF-8"));
+		//fw.append(jsonResult);
+		fw.write(jsonResult);
+		fw.close();
+		
+        return inflater.inflate(R.layout.fragment_focus, null);       
+    }
+} 

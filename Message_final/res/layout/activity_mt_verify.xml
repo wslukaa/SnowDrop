@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MtVerifyActivity" >
+
+    <LinearLayout
+        android:id="@+id/mt_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/navigationBar_height"
+        android:background="@color/navigationBar_color" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/verify_textView1_layout_marginLeft"
+            android:text="Verify"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/navigation_title_textSize"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tel_provision_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mt_title"
+        android:layout_marginLeft="@dimen/verify_tel_provision_hint_layout_marginLeft"
+        android:layout_marginRight="@dimen/verify_tel_provision_hint_layout_marginRight"
+        android:layout_marginTop="@dimen/verify_tel_provision_hint_layout_marginTop"
+        android:text="@string/prov_sms_verif_hint"
+        android:textColor="@color/text_blue_color"
+        android:visibility="visible" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/verify_line1_layout_height"
+        android:layout_below="@+id/tel_provision_hint"
+        android:layout_marginLeft="@dimen/verify_line1_layout_marginLeft"
+        android:layout_marginRight="@dimen/verify_line1_layout_marginRight"
+        android:layout_marginTop="@dimen/verify_line1_layout_marginTop"
+        android:background="@color/text_blue_color" />
+
+    <RelativeLayout
+        android:id="@+id/access_code_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tel_provision_hint"
+        android:layout_marginLeft="@dimen/verify_access_code_input_layout_marginLeft"
+        android:layout_marginRight="@dimen/verify_access_code_input_layout_marginRight"
+        android:layout_marginTop="@dimen/verify_access_code_input_layout_marginTop" >
+
+        <EditText
+            android:id="@+id/access_code_inputbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:focusable="true"
+            android:hint="@string/prov_sms_verif_input_hint"
+            android:inputType="number"
+            android:maxLength="22" >
+
+        </EditText>
+
+        <View
+            android:id="@+id/access_code_bottom_line"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/verify_access_code_bottom_line_layout_height"
+            android:layout_below="@id/access_code_inputbox"
+            android:layout_marginTop="@dimen/verify_access_code_bottom_line_layout_marginTop"
+            android:background="@color/text_gray_color" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/sms_verification_continue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/verify_sms_verification_continue_layout_height"
+        android:layout_alignLeft="@id/access_code_input"
+        android:layout_alignRight="@id/access_code_input"
+        android:layout_below="@id/access_code_input"
+        android:layout_marginTop="@dimen/verify_sms_verification_continue_layout_marginTop"
+        android:background="@drawable/bt_account_start"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/prov_tel_continue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sms_verification_nocode_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/access_code_input"
+        android:layout_alignRight="@id/access_code_input"
+        android:layout_below="@+id/sms_verification_continue"
+        android:padding="@dimen/verify_sms_verification_nocode_hint_padding"
+        android:textColor="#5dae2f"
+        android:textStyle="bold" />
+
+</RelativeLayout>

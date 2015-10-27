@@ -1,0 +1,23 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent"  
+    android:layout_height="fill_parent" >  
+  
+    <TextView
+	     android:layout_width="wrap_content"
+	     android:layout_height="match_parent"
+	     android:background="#FAF0E6"               
+	     android:textColor="#000000" 
+	     android:gravity="center"
+	     android:layout_gravity="center"
+	     android:textSize="20sp"
+	     android:textStyle="bold"
+	     android:text="这里将调用百度地图API进行地图的显示和附近站点显示">
+     </TextView>
+     
+    <com.baidu.mapapi.map.MapView  
+	    android:id="@+id/bmapView"  
+	    android:layout_width="fill_parent"  
+	    android:layout_height="fill_parent"  
+	    android:clickable="true" />
+  
+</LinearLayout>

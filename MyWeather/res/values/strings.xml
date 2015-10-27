@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SS Weather</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="weather_title">无锡天气</string>
+    <string name="weather_info_address">无锡</string>
+    <string name="weather_info_time">今天18:25发布</string>
+    <string name="weather_info_shidu">湿度57%</string>
+    <string name="weather_pm">PM2.5</string>
+    <string name="weather_100">100</string>
+    <string name="weather_wuran">重度污染</string>
+
+</resources>

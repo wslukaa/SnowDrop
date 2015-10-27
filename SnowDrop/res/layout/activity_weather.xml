@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FAF0E6"
+    android:background="#FFB6C1"
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     tools:context="com.ihs.demo.message_2013011392.MainActivity" >
 
+    <!-- "#FAF0E6"@drawable/title_beijing -->
         	
     <FrameLayout  
         android:id="@+id/frameLayout0"  
@@ -19,7 +20,7 @@
         android:layout_alignParentTop="true"  
         android:layout_alignParentLeft="true" 
         android:layout_alignParentRight="true" 
-        android:background="@drawable/title_beijing">  
+        android:background="#FFB6C1">  
   
         <LinearLayout  
             android:layout_width="match_parent"  
@@ -101,7 +102,7 @@
         android:layout_above="@+id/frameLayout1"
         android:layout_alignParentLeft="true"  
         android:layout_alignParentRight="true" 
-        android:background="#FF0000" >               
+        android:background="#FFB6C1" >               
     </FrameLayout>
     
     <FrameLayout  

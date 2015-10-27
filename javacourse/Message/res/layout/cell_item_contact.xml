@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/contact_avatar"
+        android:layout_width="@dimen/cell_item_contact_avatar_layout_width"
+        android:layout_height="@dimen/cell_item_contact_avatar_layout_height"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/cell_item_contact_avatar_layout_margin"
+        android:adjustViewBounds="true"
+        android:background="@drawable/chat_avatar_default_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/contact_avatar"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/cell_item_title_text_view_paddingLeft"
+            android:paddingRight="@dimen/cell_item_title_text_view_paddingRight"
+            android:text="title"
+            android:textAlignment="gravity"
+            android:textSize="@dimen/cell_item_title_text_view_textSize" />
+
+        <TextView
+            android:id="@+id/detail_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/cell_item_detail_text_view_paddingLeft"
+            android:paddingRight="@dimen/cell_item_detail_text_view_paddingRight"
+            android:text="title"
+            android:textAlignment="gravity"
+            android:textSize="@dimen/cell_item_detail_text_view_textSize" />
+    </LinearLayout>
+
+</RelativeLayout>

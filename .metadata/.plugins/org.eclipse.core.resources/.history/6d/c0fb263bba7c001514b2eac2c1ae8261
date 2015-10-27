@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFB6C1" >
+
+    <RelativeLayout
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:orientation="vertical"
+	     android:background="#FFB6C1" >
+	
+	     <RelativeLayout
+	         android:id="@+id/pm_layout1"
+	         android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:background="#FFB6C1" >
+		     
+		     <ImageView  
+	             android:id="@+id/pm_layout1_city"  
+	             android:layout_width="wrap_content"  
+	             android:layout_height="wrap_content" 
+	             android:layout_gravity="top|center"  
+	             android:scaleType="fitCenter"
+	             android:src="@drawable/base_action_bar_action_city" />
+
+	         <TextView
+	             android:id="@+id/pm_layout1_position"
+	             android:layout_width="wrap_content"
+	             android:layout_height="match_parent"	             
+	             android:layout_alignParentBottom="true"
+	             android:paddingBottom="10dp"
+	             android:layout_toRightOf="@+id/pm_layout1_city"
+	             android:text="海淀区明德路"
+	             android:textColor="#ffffff"
+	             android:textSize="20sp"
+	             android:textStyle="bold" />
+
+	         <TextView
+	             android:id="@+id/pm_layout1_refresh_time"
+	             android:layout_width="wrap_content"
+	             android:layout_height="match_parent"
+	             android:layout_alignParentBottom="true"
+	             android:paddingBottom="10dp"
+	             android:layout_toRightOf="@+id/pm_layout1_position"
+	             android:text=" 更新自21:18"
+	             android:textColor="#ffffff"
+	             android:textSize="18sp"
+	             android:textStyle="bold" />
+
+		 </RelativeLayout>
+		 
+	     <RelativeLayout
+	         android:id="@+id/pm_layout2"
+			 android:layout_below="@id/pm_layout1"
+	         android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:background="#FFB6C1"
+	         android:paddingBottom="15dip" >
+	         
+	         <ImageView 
+				android:id="@+id/pm_layout2_face"
+				android:src="@drawable/biz_plugin_weather_0_50"
+				android:layout_centerHorizontal="true"
+				android:layout_width="90dp"
+				android:layout_height="90dp" />
+	         
+	         <TextView 
+				android:id="@+id/pm_layout2_pm2.5_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_toLeftOf="@id/pm_layout2_face"
+				android:textColor="#ffffffff"
+				android:textSize="15sp"
+				android:text="PM2.5"
+				android:gravity="center_vertical" /> 
+         
+			 <TextView 
+				android:id="@+id/pm_layout2_pm2.5_value"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/pm_layout2_pm2.5_text"
+				android:layout_toLeftOf="@id/pm_layout2_face"
+				android:textColor="#FFE4C4"
+				android:textSize="30sp"
+				android:text="100"
+				android:gravity="center_vertical" />
+			 
+			 <TextView 
+				android:id="@+id/pm_layout2_pm2.5_color"
+				android:layout_width="50dip"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/pm_layout2_pm2.5_value"
+				android:layout_toLeftOf="@id/pm_layout2_face"
+				android:background="@drawable/corners_bg"
+				android:textColor="#ffffffff"
+				android:textSize="18sp"
+				android:text="差"
+				android:gravity="center_vertical|center_horizontal" />
+	         
+			 <TextView 
+				android:id="@+id/pm_layout2_pm10_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@id/pm_layout2_face"
+				android:textColor="#ffffffff"
+				android:textSize="15sp"
+				android:text="PM10"
+				android:gravity="center_vertical" /> 
+         
+			 <TextView 
+				android:id="@+id/pm_layout2_pm10_value"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/pm_layout2_pm10_text"
+				android:layout_toRightOf="@id/pm_layout2_face"
+				android:textColor="#FFE4C4"
+				android:textSize="30sp"
+				android:text="80"
+				android:gravity="center_vertical|left" />
+			 
+			 <TextView 
+				android:id="@+id/pm_layout2_pm10_color"
+				android:layout_width="50dip"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/pm_layout2_pm10_value"
+				android:layout_toRightOf="@id/pm_layout2_face"
+				android:background="@drawable/corners_bg"
+				android:textColor="#ffffffff"
+				android:textSize="18sp"
+				android:text="良"
+				android:gravity="center_vertical|center_horizontal" />
+			 
+	     </RelativeLayout>
+		 
+	     <View 
+	        android:id="@+id/fengxi_2"
+			android:layout_width="match_parent"
+			android:layout_height="1dip"
+			android:layout_below="@id/pm_layout2"
+			android:background="#FFE7E7E7" />
+		
+	     <RelativeLayout
+	         android:id="@+id/pm_layout2"
+			 android:layout_below="@id/pm_layout1"
+	         android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:background="#FFB6C1"
+	         android:paddingTop="15dip"
+	         android:paddingBottom="15dip" >
+		 </RelativeLayout>
+	
+	 </RelativeLayout>
+
+</ScrollView>
+
+ 

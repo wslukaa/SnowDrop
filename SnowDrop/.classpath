@@ -6,5 +6,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="D:/JAVA/SnowDrop/libs/BaiduLBS_Android.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA/SnowDrop/libs/mpandroidchartlibrary-2-1-5.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

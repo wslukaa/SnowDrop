@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources >
+    <string-array name="nocode_item_list">
+        <item >Resend Access Code</item>
+        <item >Cancel</item>
+    </string-array>
+</resources>

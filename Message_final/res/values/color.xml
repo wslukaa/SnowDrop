@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white_smoke">#F7F7F7</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="main_color_green">#00b863</color>
+    <color name="main_color_gray_dk">#3b3b3b</color>
+    <color name="main_color_gray_lt">#acacac</color>
+    <color name="main_color_gray">#7d7d7d</color>
+    <color name="gray_light">#e8e8e8</color>
+    <color name="chat_time_text_color">#5BC53F</color>
+    <color name="chat_name_text_color">#464646</color>
+    <color name="chat_content_text_color">#B1B1B1</color>
+    <color name="navigationBar_color">#333333</color>
+    <color name="text_gray_color">#858585</color>
+    <color name="text_blue_color">#33b5e5</color>
+    <color name="pull_refresh_textview">#000000</color>
+    <color name="multi_buttons_bg">#B1B1B1</color>
+    <color name="gold">#000000</color>
+
+</resources>
