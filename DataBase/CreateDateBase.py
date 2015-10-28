@@ -1,6 +1,15 @@
 
 import sqlite3
 
+'''
+	create a database file named "weather.db" and 
+	two tables, weather for storing pre-existing data,
+	predict for storing data that predicted
+'''
+'''
+	Warning：run for one time
+'''
+
 
 def main():
 	conn = sqlite3.connect("weather.db")
