@@ -39,10 +39,84 @@ import ah.hathi.snowdrop.BaseData;
 public class FragmentPage1 extends Fragment { 
 
 	private ScrollView scrollView = null;
+	private TextView layout0_city, layout0_time, layout0_shidu, layout0_press, layout0_wendu;
+	private ImageView layout0_face;
+	private TextView layout1_address, layout1_time, layout1_shidu, layout1_pm, layout1_wuran;
+	private ImageView layout1_face;
+	private TextView layout2_wendu, layout2_fanwei, layout2_miaoshu, layout2_wind;
+	private ImageView layout2_face;
+	private TextView week0_time, week0_max, week0_min;
+	private ImageView week0_weather, week1_weather, week2_weather, week3_weather, week4_weather;
+	private TextView week1_time, week1_max, week1_min;
+	private TextView week2_time, week2_max, week2_min;
+	private TextView week3_time, week3_max, week3_min;
+	private TextView week4_time, week4_max, week4_min;
 	private TextView temperture = null, address = null;
 	static String tmpNum;
 	static String t = "";
 	
+	private void init(View view) {
+		scrollView = (ScrollView)view.findViewById(R.id.focus);
+		layout0_city = (TextView) view.findViewById(R.id.focus_layout0_city);
+		layout0_time = (TextView) view.findViewById(R.id.focus_layout0_time);
+		layout0_shidu = (TextView) view.findViewById(R.id.focus_layout0_shidu);
+		layout0_press = (TextView) view.findViewById(R.id.focus_layout0_press);
+		layout0_wendu = (TextView) view.findViewById(R.id.focus_layout0_wendu);
+		layout0_face = (ImageView) view.findViewById(R.id.focus_layout0_face);
+		layout1_address = (TextView) view.findViewById(R.id.focus_layout1_address);
+		layout1_time = (TextView) view.findViewById(R.id.focus_layout1_time);
+		layout1_shidu = (TextView) view.findViewById(R.id.focus_layout1_shidu);
+		layout1_pm = (TextView) view.findViewById(R.id.focus_layout1_pm);
+		layout1_wuran = (TextView) view.findViewById(R.id.focus_layout1_wuran);
+		layout1_face = (ImageView) view.findViewById(R.id.focus_layout2_face);
+		layout2_wendu = (TextView) view.findViewById(R.id.focus_layout2_wendu);
+		layout2_fanwei = (TextView) view.findViewById(R.id.focus_layout2_fanwei);
+		layout2_miaoshu = (TextView) view.findViewById(R.id.focus_layout2_miaoshu);
+		layout2_wind = (TextView) view.findViewById(R.id.focus_layout2_wind);
+		layout2_face = (ImageView) view.findViewById(R.id.focus_layout2_face);
+		week0_time = (TextView) view.findViewById(R.id.week_0_time);
+		week0_max = (TextView) view.findViewById(R.id.week_0_max);
+		week0_min = (TextView) view.findViewById(R.id.week_0_min);
+		week0_weather = (ImageView) view.findViewById(R.id.week_0_weather);
+		week1_time = (TextView) view.findViewById(R.id.week_1_time);
+		week1_max = (TextView) view.findViewById(R.id.week_1_max);
+		week1_min = (TextView) view.findViewById(R.id.week_1_min);
+		week0_weather = (ImageView) view.findViewById(R.id.week_1_weather);
+		week2_time = (TextView) view.findViewById(R.id.week_2_time);
+		week2_max = (TextView) view.findViewById(R.id.week_2_max);
+		week2_min = (TextView) view.findViewById(R.id.week_2_min);
+		week0_weather = (ImageView) view.findViewById(R.id.week_2_weather);
+		week3_time = (TextView) view.findViewById(R.id.week_3_time);
+		week3_max = (TextView) view.findViewById(R.id.week_3_max);
+		week3_min = (TextView) view.findViewById(R.id.week_3_min);
+		week0_weather = (ImageView) view.findViewById(R.id.week_3_weather);
+		week4_time = (TextView) view.findViewById(R.id.week_4_time);
+		week4_max = (TextView) view.findViewById(R.id.week_4_max);
+		week4_min = (TextView) view.findViewById(R.id.week_4_min);
+		week0_weather = (ImageView) view.findViewById(R.id.week_4_weather);
+	}
+/*	
+	private void setData() {
+		String climate = "xxx";
+		String[] strs = { "晴", "晴" };
+		if (climate.contains("转")) {// 天气带转字，取前面那部分
+			strs = climate.split("转");
+			climate = strs[0];
+			if (climate.contains("到")) {// 如果转字前面那部分带到字，则取它的后部分
+				strs = climate.split("到");
+				climate = strs[1];
+			}
+		}
+		L.i("处理后的天气为：" + climate);
+		if (mApplication.getWeatherIconMap().containsKey(climate)) {
+			int iconRes = mApplication.getWeatherIconMap().get(climate);
+			weatherImg.setImageResource(iconRes);
+		} else {
+			// do nothing 没有这样的天气图片
+
+		}
+	}
+*/		
 	private static String request(String httpUrl, String httpArg) throws IOException {
 	    BufferedReader reader = null;
 	    String result = null;
@@ -74,15 +148,15 @@ public class FragmentPage1 extends Fragment {
 	    //System.out.println(data);
 	    return result;
 	}
-	
+
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  
             Bundle savedInstanceState) {  
 		View view = inflater.inflate(R.layout.fragment_focus, null);
-		scrollView = (ScrollView)view.findViewById(R.id.focus);
+		init(view);
+//		setData();
 		temperture = (TextView)view.findViewById(R.id.focus_layout2_wendu);
-		address = (TextView)view.findViewById(R.id.focus_layout1_address);
-		
+		address = (TextView)view.findViewById(R.id.focus_layout1_address);	
 		refresh();
 		
 		try{

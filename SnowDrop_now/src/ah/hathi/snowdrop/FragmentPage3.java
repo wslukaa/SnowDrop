@@ -15,25 +15,75 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 public class FragmentPage3 extends Fragment{  
 	
-	private LineChart lineChart24, lineChart6;
 	private ScrollView scrollView = null;
+	private TextView layout1_position, layout1_refresh_time;
+	private TextView layout2_pm2_value, layout2_pm2_color, layout2_pm10_value, layout2_pm10_color; 
+	private ImageView layout2_face;
+	private TextView layout3;
+	private LineChart lineChart24, lineChart6;
+	private String pm2_value = null, pm10_value = null, pm2_color = null, pm10_color = null;
+	
+	private void init(View view) {
+    	scrollView = (ScrollView)view.findViewById(R.id.history);
+    	layout1_position = (TextView) view.findViewById(R.id.pm_layout1_position);
+    	layout1_refresh_time = (TextView) view.findViewById(R.id.pm_layout1_refresh_time);
+    	layout2_pm2_value = (TextView) view.findViewById(R.id.pm_layout2_pm2_5_value);
+    	layout2_pm2_color = (TextView) view.findViewById(R.id.pm_layout2_pm2_5_color);
+    	layout2_pm10_value = (TextView) view.findViewById(R.id.pm_layout2_pm10_value);
+    	layout2_pm10_color = (TextView) view.findViewById(R.id.pm_layout2_pm10_color);
+    	layout2_face = (ImageView) view.findViewById(R.id.pm_layout2_face);
+    	layout3 = (TextView) view.findViewById(R.id.pm_layout3);
+		lineChart24 = (LineChart) view.findViewById(R.id.pm_layout4_24hours);
+    	lineChart6 = (LineChart) view.findViewById(R.id.pm_layout4_6hours);
+	}
+//MainActivity.java	
+	private void setData() {
+/*		if (!pm2_value.isEmpty()) {
+			int pm2 = Integer.valueOf(pm2_value).intValue();
+			int imageId = 0;
+			if (pm2 <= 35) {
+				pm2_color = "优";
+				imageId = R.drawable.biz_plugin_weather_0_50;
+			} else if (pm2 <= 100) {
+				pm2_color = "良";
+				imageId = R.drawable.biz_plugin_weather_51_100;
+			} else if (pm2 <= 150) {
+				pm2_color = "轻污";
+				imageId = R.drawable.biz_plugin_weather_101_150;
+			} else if (pm2 <= 200) {
+				pm2_color = "中污";
+				imageId = R.drawable.biz_plugin_weather_151_200;
+			} else if (pm2 <= 300) {
+				pm2_color = "重污";
+				imageId = R.drawable.biz_plugin_weather_201_300;
+			} else {
+				pm2_color = "严重";
+				imageId = R.drawable.biz_plugin_weather_greater_300;
+			}
+			layout2_pm2_color.setText(pm2_color);
+			layout2_pm2_value.setText(pm2_value);
+			layout2_face.setImageResource(imageId);
+		}
+*/		
+		LineData lineData24 = getLineData(24, 100); 
+    	LineData lineData6 = getLineData(6, 100);
+        showChart(lineChart24, lineData24, Color.rgb(114, 188, 223));
+        showChart(lineChart6, lineData6, Color.rgb(114, 188, 223));
+	}
 	
     @Override  
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  
             Bundle savedInstanceState) {  
     	View view = inflater.inflate(R.layout.fragment_history, null);
-    	lineChart24 = (LineChart) view.findViewById(R.id.pm_layout4_24hours);
-    	lineChart6 = (LineChart) view.findViewById(R.id.pm_layout4_6hours);
-    	scrollView = (ScrollView)view.findViewById(R.id.history);
+    	init(view);
     	refresh();
-    	LineData lineData24 = getLineData(24, 100); 
-    	LineData lineData6 = getLineData(6, 100);
-        showChart(lineChart24, lineData24, Color.rgb(114, 188, 223));
-        showChart(lineChart6, lineData6, Color.rgb(114, 188, 223));
+    	setData();
     	return view;       
     }    
     

@@ -42,7 +42,7 @@
 	    
         <ImageView 
 			android:id="@+id/lufei"
-			android:src="@drawable/qiaoba"
+			android:src="@drawable/lufei"
 			android:layout_below="@+id/city_layout0"
 			android:layout_width="350dp"
 			android:layout_height="350dp"
