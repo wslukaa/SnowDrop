@@ -1,21 +1,25 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys, urllib, urllib2, json
+import sys, urllib, urllib2, json, MySQLdb, time
 
 url = 'http://apis.baidu.com/heweather/weather/free?city=beijing'
+TIMEFORMAT = '%Y-%m-%d %X'
 
 def main():
+	lt = time.strftime(TIMEFORMAT, time.localtime(time.time()))
 	req = urllib2.Request(url)
 	req.add_header("apikey", "28d1f38f1dd8b642fbb16307c245e39e")
 	resp = urllib2.urlopen(req)
 	content = resp.read()
 	if not content:
-	    print "No content"
-	print content
+	    print lt, "No content"
+	#print content
 	data = json.loads(content)
+	insertIntoDB(data, lt)
 
-def insertIntoDB(data):	
+def insertIntoDB(data, lt):	
 	try:
-		conn = MySQL.connect(
+		conn = MySQLdb.connect(
 			host = 'localhost',
 			user = 'root',
 			passwd = 'snowdrop',
@@ -24,7 +28,7 @@ def insertIntoDB(data):
 			)
 		cur = conn.cursor()
 		iid = "insert into weather (\
-			timestamp, \
+			timetamp, \
 			location, \
 			tmp, \
 			pm, \
@@ -58,7 +62,7 @@ def insertIntoDB(data):
 		conn.commit()
 		cur.close()
 		conn.close()
-		print "Successed"
+		print lt, "Successed"
 
 	except MySQLdb.Error,e:
 		print "Mysql Error %d: %s" % (e.args[0], e.args[1])

@@ -1,0 +1,102 @@
+/home/snowdrop/py/citiesweather.py:70: Warning: Data truncated for column 'pcpn' at row 1
+  cur.execute(iid, values)
+2015-11-23 00:20:01
+beijing
+shanghai
+guangzhou
+yinchuan
+wulumuqi
+haerbin
+haikou
+Successed
+2015-11-23 01:20:01
+beijing
+Traceback (most recent call last):
+  File "/home/snowdrop/py/citiesweather.py", line 102, in <module>
+    main()
+  File "/home/snowdrop/py/citiesweather.py", line 48, in main
+    data = json.loads(content)
+  File "/usr/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+/home/snowdrop/py/citiesweather.py:70: Warning: Data truncated for column 'pcpn' at row 1
+  cur.execute(iid, values)
+2015-11-23 02:20:01
+beijing
+shanghai
+guangzhou
+yinchuan
+wulumuqi
+haerbin
+haikou
+Successed
+/home/snowdrop/py/citiesweather.py:70: Warning: Data truncated for column 'pcpn' at row 1
+  cur.execute(iid, values)
+2015-11-23 03:20:01
+beijing
+shanghai
+guangzhou
+yinchuan
+wulumuqi
+haerbin
+haikou
+Successed
+/home/snowdrop/py/citiesweather.py:70: Warning: Data truncated for column 'pcpn' at row 1
+  cur.execute(iid, values)
+2015-11-23 04:20:01
+beijing
+shanghai
+guangzhou
+yinchuan
+wulumuqi
+haerbin
+haikou
+Successed
+2015-11-23 05:20:02
+beijing
+Traceback (most recent call last):
+  File "/home/snowdrop/py/citiesweather.py", line 102, in <module>
+    main()
+  File "/home/snowdrop/py/citiesweather.py", line 48, in main
+    data = json.loads(content)
+  File "/usr/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+2015-11-23 06:20:01
+beijing
+Traceback (most recent call last):
+  File "/home/snowdrop/py/citiesweather.py", line 102, in <module>
+    main()
+  File "/home/snowdrop/py/citiesweather.py", line 57, in main
+    values.append(rd['now']['pres'])
+KeyError: 'pres'
+2015-11-23 07:20:01
+beijing
+Traceback (most recent call last):
+  File "/home/snowdrop/py/citiesweather.py", line 102, in <module>
+    main()
+  File "/home/snowdrop/py/citiesweather.py", line 48, in main
+    data = json.loads(content)
+  File "/usr/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+2015-11-23 08:20:01
+beijing
+Traceback (most recent call last):
+  File "/home/snowdrop/py/citiesweather.py", line 102, in <module>
+    main()
+  File "/home/snowdrop/py/citiesweather.py", line 57, in main
+    values.append(rd['now']['pres'])
+KeyError: 'pres'

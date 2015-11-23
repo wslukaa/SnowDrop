@@ -1,0 +1,95 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import sys, urllib, urllib2, json, MySQLdb, time
+
+cities = ["beijing", "shanghai", "guangzhou", "yinchuan", "wulumuqi", "haerbin", "haikou"]
+url = 'http://apis.baidu.com/heweather/weather/free?city='
+TIMEFORMAT = '%Y-%m-%d %X'
+
+def main():
+	lt = time.strftime(TIMEFORMAT, time.localtime(time.time()))
+	print lt
+	try:
+		conn = MySQLdb.connect(
+			host = 'localhost',
+			user = 'root',
+			passwd = 'snowdrop',
+			db = 'sdweather',
+			charset = 'utf8'
+			)
+		cur = conn.cursor()
+		iid = "insert into citiesweather (\
+			timetamp, \
+			location, \
+			tmp, \
+			pm, \
+			hum, \
+			pcpn, \
+			pres, \
+			deg, \
+			dir, \
+			sc, \
+			spd, \
+			cond_code, \
+			cond_txt) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+
+		strsql = "insert into forecast (timestamp, area, date, hum, pcpn, pop, pres, tmpmax, tmpmin, vis, winddeg, winddir, windsc, windspd, cond_d, cond_n, txt_d, txt_n)\
+			values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+
+		for city in cities:
+			req = urllib2.Request(url + city)
+			req.add_header("apikey", "28d1f38f1dd8b642fbb16307c245e39e")
+			resp = urllib2.urlopen(req)
+			content = resp.read()
+			if not content:
+	    			print "No content"
+		#	print content
+			data = json.loads(content)
+			rd = data['HeWeather data service 3.0'][0] #realdata
+			values = []
+			values.append(rd['basic']['update']['loc'])
+			values.append(rd['basic']['city'])
+			values.append(rd['now']['tmp'])
+			values.append(rd['aqi']['city']['pm25'])
+			values.append(rd['now']['hum'])
+			values.append(rd['now']['pcpn'])
+			values.append(rd['now']['pres'])
+			values.append(rd['now']['wind']['deg'])
+			values.append(rd['now']['wind']['dir'])
+			values.append(rd['now']['wind']['sc'])
+			values.append(rd['now']['wind']['spd'])
+			values.append(rd['now']['cond']['code'])
+			values.append(rd['now']['cond']['txt'])
+			cur.execute(iid, values)
+			
+			for df in rd['daily_forecast']:
+				vf = []
+				vf.append(rd['basic']['update']['loc'])
+				vf.append(rd['basic']['city'])
+				vf.append(df['date'])
+				vf.append(df['hum'])
+				vf.append(df['pcpn'])
+				vf.append(df['pop'])
+				vf.append(df['pres'])
+				vf.append(df['tmp']['max'])
+				vf.append(df['tmp']['min'])
+				vf.append(df['vis'])
+				vf.append(df['wind']['deg'])
+				vf.append(df['wind']['dir'])
+				vf.append(df['wind']['sc'])
+				vf.append(df['wind']['spd'])
+				vf.append(df['cond']['code_d'])
+				vf.append(df['cond']['code_n'])
+				vf.append(df['cond']['txt_d'])
+				vf.append(df['cond']['txt_n'])
+				cur.execute(strsql, vf)
+		conn.commit()
+		cur.close()
+		conn.close()
+		print "Successed"
+
+	except MySQLdb.Error,e:
+		print "Mysql Error %d: %s" % (e.args[0], e.args[1])
+
+if __name__ == '__main__':
+	main()
